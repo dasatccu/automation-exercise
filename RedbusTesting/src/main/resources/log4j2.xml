@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration status="WARN" monitorInterval="30">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%style{%d{HH:mm:ss.SSS}}{cyan} [%t] %highlight{%-5level} %style{%c{1.}}{green} - %msg%n"
+                           disableAnsi="false"
+                           noConsoleNoAnsi="false"/>
+        </Console>
+        <File name="FileLogger" target="SYSTEM_OUT" filename="logs/TestRunLogs.log">
+            <PatternLayout pattern = "%d{HH:mm:ss:SSS [%t] %-5level %logger{36} -%msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileLogger"/>
+        </Root>
+    </Loggers>
+</configuration>
